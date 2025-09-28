@@ -12,7 +12,29 @@ one->data=rno;
 one->link=NULL;
 return one;
 }
+void print(struct Node*head){
+struct Node*temp=head;
+while (temp!=NULL){
+        printf("%d->",temp->data);
+    temp=temp->link;
+}
+printf("NULL");
+}
 
+
+struct Node*insertAtEnd(struct Node*head,int data){
+struct Node*newNode=createNode(data);
+
+struct Node*temp=head;
+if(temp==NULL){
+    return newNode;
+}
+while(temp->link!=NULL){
+    temp=temp->link;
+}
+temp->link=newNode;
+return head;
+};
 
 int main(){
 int myRollNo=50;
